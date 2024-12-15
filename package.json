@@ -1,8 +1,8 @@
 {
   "name": "todos-m",
   "version": "0.1.0",
-  "private": false,
-  "homepage": "https://brendobar.github.io/todo",
+  "private": true,
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
