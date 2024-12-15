@@ -1,14 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import styles from './TodoList.module.css'
 import classNames from "classnames";
+import {TodoItemProps, TodoListProps} from "./TodoList.types";
 
-type TodoItemProps = {
-    id: number,
-    text: string,
-    done: boolean
-}
-
-type TodoListProps = TodoItemProps[]
 
 const TodoList = () => {
 
@@ -96,6 +90,7 @@ const TodoList = () => {
                                     fill="#ccc"/>
                             </svg>
                             <input className={styles.todoInput}
+                                   id='todo-input'
                                    name="todo"
                                    placeholder="What needs to be done?"
                                    value={todoInput}
