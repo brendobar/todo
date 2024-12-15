@@ -1,0 +1,144 @@
+.pageCenter{
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 96px 16px;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 64px;
+    font-weight: lighter;
+}
+.todoContainer{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 8px 8px 0 #ccc;
+    overflow: hidden;
+}
+
+.inputWrapper{
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    padding: 12px 12px 12px 64px;
+}
+.inputWrapper svg{
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+}
+.todoInput{
+    border: none;
+    font-size: 24px;
+    line-height: 120%;
+    color: black;
+    outline: none;
+}
+.todoInput::placeholder{
+    color: #ccc;
+}
+
+
+.list{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    padding: 16px;
+    min-height: 136px;
+}
+.listItem{
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 120%;
+    padding-left: 32px;
+}
+.listItem::before{
+    content: "";
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 0;
+    border: 1px solid #000;
+    border-radius: 20px;
+}
+.listItem::after{
+    content: "✓";
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s;
+}
+.listItem.done::after{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+
+.controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 8px 16px;
+    border-top: 1px solid #ccc;
+}
+.filters{
+    display: flex;
+    gap: 16px;
+}
+.filter,
+.clear{
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 8px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: none;
+    font-size: 14px;
+    line-height: 120%;
+    cursor: pointer;
+    transition-property: border, color;
+    transition-duration: .2s;
+}
+.filter:hover,
+.clear:hover{
+    color: darkorange;
+}
+.filter.active{
+    border-color: darkorange;
+}
+
+@media screen and (max-width: 767px){
+    .filters{
+        justify-content: center;
+        gap: 8px;
+        max-width: 100%;
+        width: 100%;
+        order: 3;
+    }
+}
